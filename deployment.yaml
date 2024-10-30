@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stress-test-deployment
+spec:
+  replicas: 2  
+  selector:
+    matchLabels:
+      app: stress-test
+  template:
+    metadata:
+      labels:
+        app: stress-test
+    spec:
+      containers:
+        - name: stress-test-container
+          image: nikhil698/stress_test_image:latest
+          ports:
+            - containerPort: 80
