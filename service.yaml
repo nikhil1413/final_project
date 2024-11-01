@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: stress-test-service
 spec:
-  type: NodePort  # Exposes the service on a port on each Node
+  type: NodePort
   selector:
     app: stress-test
   ports:
-    - port: 80  # Port exposed by the service
-      targetPort: 80  # Port your container listens on
-      nodePort: 30000  # Port on which the service will be accessible externally
+  - port: 80
+    targetPort: 80
+    nodePort: 30000
